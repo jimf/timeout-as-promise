@@ -16,7 +16,7 @@ Install using npm:
 ## Usage
 
 ```js
-var delay = require('timeout-as-promise');
+const delay = require('timeout-as-promise');
 
 delay().then(function() {
     console.log('nextTick!');
@@ -37,6 +37,20 @@ Promise.resolve(42)
     .then(function(result) {
         console.log('result is ' + result); //=> 42
     });
+```
+
+### Or using async/await
+
+```js
+const delay = require('timeout-as-promise');
+
+async function stop() {
+    console.log('starting up');
+    await delay(2000);
+    console.log('2 seconds have passed');
+}
+
+stop();
 ```
 
 ## License
